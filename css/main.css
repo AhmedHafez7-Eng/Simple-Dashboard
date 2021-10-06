@@ -17,8 +17,58 @@
     --black2: #999;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 4px;
+}
+
+/* button (Tob & Bottom Corners) */
+/* ::-webkit-scrollbar-button {
+    background: rgb(231, 231, 250);
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-black-50);
+} */
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+/* The track NOT covered by the handle.
+::-webkit-scrollbar-track-piece {
+    background: #000;
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+    background: var(--white);
+}
+
+/* Resizer */
+::-webkit-resizer {
+    background: var(--white);
+}
+
+
 body {
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+html {
     overflow-x: hidden;
 }
 
@@ -625,6 +675,7 @@ a {
 
 /* Responsive Design */
 @media (max-width: 991px) {
+
     .container .navigation {
         left: -250px;
     }
@@ -654,6 +705,10 @@ a {
 }
 
 @media (max-width: 768px) {
+    * {
+        cursor: none;
+    }
+
     .details {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -665,6 +720,7 @@ a {
     .status.inprogress {
         white-space: nowrap;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -700,6 +756,10 @@ a {
         position: fixed;
         right: 0;
         left: initial;
+    }
+
+    .main.active {
+        left: -250px;
     }
 }
 
